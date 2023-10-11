@@ -1,5 +1,4 @@
 /* Глобальные стили для проекта, их можно дополнять и менять по желанию */
-
 *,
 *::before,
 *::after {
@@ -8,7 +7,7 @@
 
 body {
   min-inline-size: 375px;
-  max-inline-size: 1440px;
+  max-inline-size: 1024px;
   margin: 0 auto;
 }
 
@@ -39,4 +38,5 @@ a {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  text-decoration: none;
 }
