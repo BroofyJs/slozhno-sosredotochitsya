@@ -14,12 +14,12 @@
   --button-hover: rgba(50, 49, 45, 0.40);
 }
 
+.theme_light .header_rec {
+  display: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    background-image: url(../images/cover-image-light.png);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     --accent-font: "IBM Plex mono";
     --frame-color: #ff8dcb;
     --text-color: #353430;
@@ -30,8 +30,16 @@
     --header-text-color: #353430;
     --button-hover: rgba(50, 49, 45, 0.40);
   }
-}
 
-.theme_light .header_rec {
-  display: none;
+  .page {
+    background-image: url(../images/cover-image-light.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .header_rec {
+    display: none;
+   }
+  
 }
