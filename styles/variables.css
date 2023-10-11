@@ -1,3 +1,12 @@
 :root {
   --page-padding: clamp(0.625rem, 0.0271rem + 2.551vw, 1.25rem);
+  --accent-font: "IBM Plex mono";
+  --frame-color: #ff8dcb;
+  --text-color: #353430;
+  --title-color: #ffc2e6;
+  --bg-color: #fff1f7;
+  --button-color: #353430;
+  --decor-color: #FF0070;
+  --header-text-color: #353430;
+  --button-hover: rgba(50, 49, 45, 0.40);
 }
