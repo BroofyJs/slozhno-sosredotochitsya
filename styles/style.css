@@ -21,36 +21,6 @@
   grid-template-columns: 50%;
 }
 
-@media screen and (max-width: 767px) {
-  .header {
-    grid-template-areas:
-      "menu menu"
-      "title title"
-      "text text";
-  }
-
-  .header_title {
-    margin-inline-end: var(--page-padding);
-    margin-inline-start: var(--page-padding);
-  }
-
-  .header__theme-menu {
-    margin-top: 55px;
-    margin-inline-end: var(--page-padding);
-  }
-
-  .header_paragraph {
-    margin-inline-start: var(--page-padding);
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .header__theme-menu {
-    margin-top: 55px;
-    margin-inline-end: var(--page-padding);
-  }
-}
-
 .header__theme-menu {
   justify-self: end;
   grid-area: menu;
@@ -60,22 +30,6 @@
   display: flex;
   flex-direction: column;
   gap: 13px;
-}
-
-@media screen and (min-width: 1024px) {
-  .header__theme-menu {
-    position: absolute;
-    top: var(--page-padding);
-    left: 0;
-    right: 0;
-    margin-inline-end: auto;
-    margin-inline-start: auto;
-    width: 236px;
-  }
-
-  .header__theme-menu-list {
-    flex-direction: row;
-  }
 }
 
 .header__theme-menu-button {
@@ -125,9 +79,10 @@
 
 .header_paragraph {
   grid-area: text;
-  margin-block-end: 20px;
+  margin-block-end: 55px;
   background-color: var(--frame-color);
   margin-inline-end: var(--page-padding);
+  align-self: center;
 }
 
 .font-style {
@@ -137,18 +92,15 @@
 }
 
 .content {
-  padding: 0 var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  padding: calc(2 * var(--page-padding)) var(--page-padding);
 }
 
 .section_first,
 .section_thrid {
   display: grid;
   gap: 20px;
-  margin-block-end: 50px;
-
-  @media screen and (min-width: 768px) {
-    grid-template-columns: 30% auto;
-  }
 }
 
 .section_first .section_content,
@@ -160,12 +112,7 @@
 .section_second {
   display: grid;
   gap: 20px;
-  margin-block-end: 50px;
   grid-template-columns: auto auto auto;
-
-  @media screen and (max-width: 1023px) {
-    grid-template-columns: 30% auto;
-  }
 }
 
 .main_title {
@@ -188,20 +135,11 @@
 .section_second .main_title {
   grid-column: 1;
   grid-row: 1;
-
-  @media screen and (max-width: 767px) {
-    grid-column: 1 / 3;
-  }
 }
 
 .section_second article {
   grid-column: auto;
   grid-row: 2;
-
-  @media screen and (max-width: 1023px) {
-    grid-column: 1 / 3;
-    grid-row: auto;
-  }
 }
 
 .section_galery {
@@ -209,7 +147,6 @@
 }
 
 .main_galery {
-  margin-block-end: 60px;
   margin-block-start: var(--page-padding);
   display: grid;
   gap: 20px;
@@ -217,18 +154,6 @@
     "sunset sunset icecream"
     "tape books icecream"
     "tape street street";
-
-  @media screen and (max-width: 767px) {
-    margin-block-end: 40px;
-    grid-template-columns: 100%;
-    grid-template-areas:
-      "sunset"
-      "icecream"
-      "tape"
-      "books"
-      "street";
-    gap: 10px;
-  }
 }
 
 .section_galery_pic {
@@ -307,11 +232,6 @@ footer {
   right: var(--page-padding);
   border-top: 1px solid var(--button-color);
   border-right: 1px solid var(--button-color);
-
-  /* @media screen and (min-width: 768px) {
-    top: var(--page-padding);
-    right: var(--page-padding);
-  } */
 }
 
 .grab-zone::before {
@@ -320,24 +240,17 @@ footer {
   width: 25px;
   height: 25px;
   position: absolute;
-  /* bottom: var(--page-padding);
-  left: var(--page-padding); */
   bottom: var(--page-padding);
   left: var(--page-padding);
   border-bottom: 1px solid var(--button-color);
   border-left: 1px solid var(--button-color);
-
-  /* @media screen and (max-width: 767px) {
-    bottom: 0;
-    left: 0;
-  } */
 }
 footer.grab-zone::after {
   right: 0;
 }
 footer.grab-zone::before {
-    left: 0;
-  }
+  left: 0;
+}
 
 .header_rec {
   position: absolute;
@@ -356,4 +269,91 @@ footer.grab-zone::before {
   content: url(../images/ellipse.svg);
   width: 21px;
   height: 21px;
+}
+
+/* мобила */
+@media screen and (max-width: 767px) {
+  .header {
+    grid-template-areas:
+      "menu menu"
+      "title title"
+      "text text";
+  }
+
+  .header_title {
+    margin-inline-end: var(--page-padding);
+    margin-inline-start: var(--page-padding);
+  }
+
+  .header__theme-menu {
+    margin-block-start: 55px;
+    height: 80px;
+    margin-inline-end: var(--page-padding);
+  }
+
+  .header_paragraph {
+    margin-inline-start: var(--page-padding);
+  }
+
+  .section_second .main_title {
+    grid-column: 1 / 3;
+  }
+
+  .main_galery {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "sunset"
+      "icecream"
+      "tape"
+      "books"
+      "street";
+    gap: 10px;
+  }
+
+  .content {
+    gap: 50px;
+  }
+}
+
+/* планшет */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header__theme-menu {
+    margin-inline-end: var(--page-padding);
+  }
+  .section_second article {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+}
+
+/* пк */
+@media screen and (min-width: 1024px) {
+  .header__theme-menu {
+    position: absolute;
+    top: var(--page-padding);
+    left: 0;
+    right: 0;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    width: 236px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+}
+
+/* планшет + пк */
+@media screen and (min-width: 768px) {
+  .section_first,
+  .section_thrid {
+    grid-template-columns: 30% auto;
+  }
+  .section_second {
+    grid-template-columns: 30% auto;
+  }
+
+  .content {
+    gap: 80px;
+  }
 }
