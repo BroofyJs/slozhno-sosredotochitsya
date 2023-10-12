@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  --accent-font: "IBM Plex mono";
+  --accent-font: "IBM Plex Mono", Consolas, monospace;
   --frame-color: #ff8dcb;
   --text-color: #353430;
   --title-color: #ffc2e6;
@@ -20,7 +20,7 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --accent-font: "IBM Plex mono";
+    --accent-font: "IBM Plex Mono", Consolas, monospace;
     --frame-color: #ff8dcb;
     --text-color: #353430;
     --title-color: #ffc2e6;
