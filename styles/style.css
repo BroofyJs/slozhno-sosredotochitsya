@@ -342,9 +342,16 @@ footer.grab-zone::before {
 /* планшет */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .header__theme-menu {
-    height: 100px;
     margin-inline-end: var(--page-padding);
     align-self: flex-end;
+  }
+
+  .header {
+    grid-template-areas:
+      " menu menu " 
+      " title title " 
+      " . text ";
+    grid-template-rows: 290px 270px auto;
   }
 
   .title {
@@ -356,11 +363,11 @@ footer.grab-zone::before {
   }
 
   .header_title {
-    margin-block-start: 100px;
+    align-self: flex-end;
   }
 
   .header_paragraph {
-    margin-bottom: 100px;
+    margin-bottom: 15px;
   }
 
   .footer-decor {
